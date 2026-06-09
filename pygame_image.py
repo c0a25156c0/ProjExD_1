@@ -26,16 +26,18 @@ def main():
         screen.blit(kk_img, kk_rct)
         screen.blit(bg_img,[-x+3200,0])
         key_lst = pg.key.get_pressed()
+        y=-1
+        z=0
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0,-1))
+            z=-1
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0,1))
+            z=1
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,0))
+            y=-2
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((1,0))
-        else:
-            kk_rct.move_ip((-1,0))
+            y=1
+        kk_rct.move_ip((y,z))
+        screen.blit(kk_img,kk_rct)
         pg.display.update()
         tmr += 1      
         clock.tick(200)
