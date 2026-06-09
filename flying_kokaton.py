@@ -36,6 +36,7 @@ def main():
             y=-2
         if key_lst[pg.K_RIGHT]:
             y=1
+        # move_ipを使う（1回）
         kk_rct.move_ip((y,z))
         screen.blit(kk_img,kk_rct)
         pg.display.update()
